@@ -9,7 +9,7 @@ require('dotenv').config()
 
 app.use(express.json())
 app.use(cors())
-app.set('view engine', 'ejs');
+//app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
 app.get('/', async (req, res)=>{
@@ -17,7 +17,7 @@ app.get('/', async (req, res)=>{
 })
 
 app.get("/:room", async (req, res)=>{
-    res.render("room", { roomId: req.params.room });
+    res.send({ roomId: req.params.room });
 })
 
 io.on('connection', socket => {

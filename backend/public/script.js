@@ -1,4 +1,4 @@
-const socket = io("http://localhost:4000/", { transports: ["websocket"] });
+const socket = io("/", { transports: ["websocket"] });
 const videoGrid = document.getElementById("video-box");
 const myVideo = document.createElement('video')
 
